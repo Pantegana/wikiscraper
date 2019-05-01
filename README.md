@@ -1,4 +1,4 @@
 # wikiscraper
 
-A scraper for wikipedia articles that summirized their content using nltk.
+A scraper for wikipedia articles that summirizes their content using nltk.
 Made for fun.
