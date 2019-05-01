@@ -51,7 +51,6 @@ class ImageSpider(scrapy.Spider):
         for s in sent_tokenizer.tokenize(text):
             s = s.strip()
             s = re.sub(r'[^0-9a-zA-Z]$', '.', s)
-            #if not s.endswith('.'): s = s + '.'
             if len(s) > 1 and len(s.split()) > 5:
                 sentences = pd.concat(
                     [sentences, pd.DataFrame({'sentence' : s}, index=[0])], ignore_index=True)
