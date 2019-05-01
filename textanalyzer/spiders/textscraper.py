@@ -27,7 +27,7 @@ class ImageSpider(scrapy.Spider):
         sentences = sentences.nlargest(self.summary_length, 'score')
         sentences = sentences.sort_index()
 
-        with open(response.css("title::text").get(), mode="w", encoding="utf-8") as file:
+        with open("./results/{}.txt".format(response.css("title::text").get()), mode="w", encoding="utf-8") as file:
             sentences.apply(lambda row: file.write("{}\n".format(row['sentence'])), axis=1)
         file.close()
         
